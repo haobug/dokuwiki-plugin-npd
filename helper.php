@@ -73,6 +73,7 @@ class helper_plugin_npd extends DokuWiki_Plugin
                 return $out;
             } else {
                 echo $out;
+				return '';
             }
         } else {
         //make nice URLs even for buttons
