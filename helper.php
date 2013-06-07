@@ -69,10 +69,11 @@ class helper_plugin_npd extends DokuWiki_Plugin
                 $out = html_btn('create_new', $id, false, $params, 'get','', $label);
                 break;
             }
-            if($return)
+            if ($return) {
                 return $out;
-            else
-                echo $out
+            } else {
+                echo $out;
+            }
         } else {
         //make nice URLs even for buttons
         if($conf['userewrite'] == 2){

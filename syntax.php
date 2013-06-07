@@ -1,10 +1,9 @@
 <?php
 /**
- * Keyboard Syntax Plugin: Marks text as keyboard key presses.
+ * npd Syntax Plugin: for user create new page in wiki page.
  *
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
- * @author     Gina Haeussge <osd@foosel.net>
- * @author     Christopher Arndt
+ * @author     haobug
  */
 
 if(!defined('DOKU_INC'))
@@ -56,15 +55,15 @@ class syntax_plugin_npd extends DokuWiki_Syntax_Plugin {
     function render($mode, &$renderer, $data) {
         if ($mode == 'xhtml') {
             list($state, $matches) = $data;
-			switch ($state) {
-				case DOKU_LEXER_ENTER :
-					if(!($helper = plugin_load('helper', 'npd'))) return false;
-					$renderer->doc .= $helper->html_new_page_button(true);
-					return true;
-				case DOKU_LEXER_UNMATCHED :
-				case DOKU_LEXER_EXIT:
-					return true;
-			}
+            switch ($state) {
+                case DOKU_LEXER_ENTER :
+                    if(!($helper = plugin_load('helper', 'npd'))) return false;
+                    $renderer->doc .= $helper->html_new_page_button(true);
+                    return true;
+                case DOKU_LEXER_UNMATCHED :
+                case DOKU_LEXER_EXIT:
+                    return true;
+            }
         }
         return false;
     }
