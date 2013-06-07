@@ -63,11 +63,16 @@ class helper_plugin_npd extends DokuWiki_Plugin
 			$link_type = $this->getConf('link_type');
 			switch ($link_type) {
 			case 'link':
-				$out = tpl_link($url, $label, '', $return);
+				$out = tpl_link($url, $label, '', true);
 				break;
 			default:
 				$out = html_btn('create_new', $id, false, $params, 'get','', $label);
 				break;
+			}
+			if ($return) {
+				return $out;
+			} else {
+				echo $out;
 			}
 			return $out;
 		} else {
