@@ -18,5 +18,6 @@ $lang['dlg_new_folder'] = 'Enter new folder name:';
 
 /* misc */
 $lang['msc_page_title'] = 'Page Title';
+$lang['non_login_show']  = 'Show create new page for non-login user';
 
 //Setup VIM: ex: et ts=4 :
